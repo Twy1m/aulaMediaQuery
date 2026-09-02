@@ -1,0 +1,166 @@
+/* Configurações gerais */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background: #0b356b;
+}
+
+/* Barra de navegação */
+header {
+    background-color: #08294f;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 0;
+}
+
+.logo {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    gap: 25px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: #73b5ff;
+}
+
+#menu-toggle,
+.menu-sanduiche {
+    display: none;
+}
+
+/* Conteúdo principal */
+main {
+    min-height: 80vh;
+    padding: 40px 0;
+}
+
+h1 {
+    margin: 0 0 35px;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.item {
+    padding: 15px;
+    color: #18304d;
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.imagem-clp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+    color: white;
+    background-color: #526273;
+    border-top: 12px solid #1683e8;
+    border-radius: 6px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.item h2 {
+    font-size: 1.2rem;
+}
+
+.item p {
+    color: #65758a;
+}
+
+.item .preco {
+    color: #1268e8;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.item .estoque {
+    font-size: 0.9rem;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #08294f;
+}
+
+/* Duas colunas quando a tela diminui */
+@media (max-width: 900px) {
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Menu sanduíche no celular */
+@media (max-width: 599px) {
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        padding: 0 20px;
+        font-size: 2rem;
+    }
+
+    .menu-sanduiche {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    .menu-sanduiche span {
+        width: 28px;
+        height: 3px;
+        background-color: white;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background-color: #08294f;
+        text-align: center;
+    }
+
+    .menu a {
+        display: block;
+        padding: 15px;
+        border-top: 1px solid #315274;
+    }
+
+    #menu-toggle:checked ~ .menu {
+        display: block;
+    }
+}
